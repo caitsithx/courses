@@ -176,7 +176,7 @@ class Vgg16():
         """
         self.ft(batches.nb_class)
         classes = list(iter(batches.class_indices)) # get a list of all the class labels
-        
+
         # batches.class_indices is a dict with the class name as key and an index as value
         # eg. {'cats': 0, 'dogs': 1}
 
@@ -193,7 +193,6 @@ class Vgg16():
         """
         self.model.compile(optimizer=Adam(lr=lr),
                 loss='categorical_crossentropy', metrics=['accuracy'])
-
 
     def fit_data(self, trn, labels,  val, val_labels,  nb_epoch=1, batch_size=64):
         """
